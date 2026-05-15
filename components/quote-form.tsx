@@ -138,7 +138,7 @@ export function QuoteForm() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl text-balance" style={{...playfairStyle, fontSize: "45px"}}>
             Get Our 7K Offer
           </h2>
-          <p className="mt-3 text-white/60">No pressure. No obligation.</p>
+          <p className="mt-3 text-white/60">No pressure. No obligation.{"\n\n"}Most Homes Qualify for This Offer - Let&apos;s See If Yours Does Too!</p>
         </div>
 
         <div className="rounded-2xl border border-amber-600/20 bg-[#261c0d] p-6 shadow-2xl sm:p-10">
