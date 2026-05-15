@@ -27,10 +27,10 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-6 sm:px-6 sm:py-0 lg:px-8">
         <div className="max-w-2xl">
           <h1 className="mb-3 sm:mb-5 text-[2.55rem] font-bold leading-tight text-white sm:text-[3.2rem] lg:text-[3.825rem] text-balance" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            Grab Our 7k Flat Offer.
+            Grab Our 7k Flat Offer.{"\n\n"}Custom Patio Covers Designed to Impress.
           </h1>
           <p className="mb-5 sm:mb-8 text-lg leading-relaxed text-white/80 sm:text-xl lg:text-2xl">
-            Handcrafted Patio Covers That Turn Ordinary Backyards Into Luxury Retreats
+            Patio Covers That Turn Ordinary Backyards Into Luxury Retreats
           </p>
           <Button
             onClick={onGetQuote}
