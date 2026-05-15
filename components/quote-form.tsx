@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 const STEPS = [
   {
     title: "What's your name?",
-    subtitle: "Let's get to know each other",
+    subtitle: "So we know who to ask for",
     type: "text" as const,
     placeholder: "Your full name",
     field: "name",
