@@ -196,7 +196,7 @@ export function QuoteForm() {
               You&apos;re All Set, {textInputs.name?.split(" ")[0] || "Friend"}!
             </h2>
             <p className="text-lg leading-relaxed text-white/70">
-              {"We've received your information and will be in touch shortly to discuss your project."}
+              {"We received your information! We will send you a message in a couple mins, keep an eye out!"}
             </p>
           </div>
         </div>
