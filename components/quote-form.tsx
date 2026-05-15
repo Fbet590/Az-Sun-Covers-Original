@@ -105,7 +105,7 @@ export function QuoteForm() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-amber-400">
             AZ Sun Covers LLC
           </p>
-          <h2 className="text-2xl font-bold text-white sm:text-3xl text-balance" style={{...playfairStyle, fontSize: "50px"}}>
+          <h2 className="text-2xl font-bold text-white sm:text-3xl text-balance" style={{...playfairStyle, fontSize: "45px"}}>
             Get Our 7K Offer
           </h2>
           <p className="mt-2 text-amber-400/80 text-balance">{"Answer our quick form and we'll get in touch. \n\nNo Pressure. \nNo Obligation. Less than 19 Seconds."}</p>
