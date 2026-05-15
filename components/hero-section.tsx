@@ -26,10 +26,10 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
       {/* Hero content */}
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-6 sm:px-6 sm:py-0 lg:px-8 -mt-4 sm:-mt-8">
         <div className="max-w-2xl">
-          <h1 className="mb-3 sm:mb-5 text-[50px] font-bold leading-tight text-white sm:text-[68px]" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
+          <h1 className="mb-3 sm:mb-5 text-[50px] font-bold leading-tight text-white sm:text-[75px]" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
             Grab Our 7k Flat Offer.
           </h1>
-          <p className="mb-5 sm:mb-8 text-2xl font-semibold leading-relaxed text-white/90 sm:text-3xl lg:text-4xl">
+          <p className="mb-5 sm:mb-8 text-2xl font-bold leading-relaxed text-white/90 sm:text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-poppins), sans-serif", fontSize: "60px" }}>
             Custom Patio Covers Designed to Impress.
           </p>
           <p className="mb-5 sm:mb-8 text-lg leading-relaxed text-white/70 sm:text-xl lg:text-2xl">
