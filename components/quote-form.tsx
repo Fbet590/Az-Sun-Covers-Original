@@ -25,7 +25,7 @@ const STEPS = [
   },
   {
     title: "Best number to reach you?",
-    subtitle: "Best number to reach you",
+    subtitle: "For a quick follow-up about your eligibility",
     type: "text" as const,
     placeholder: "(555) 123-4567",
     field: "phone",
