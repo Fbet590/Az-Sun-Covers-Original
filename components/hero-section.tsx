@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col overflow-hidden pb-16 sm:pb-0">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col overflow-hidden pb-24 sm:pb-8">
       <Image
         src="/images/hero-patio.jpg"
         alt="Custom patio cover in Arizona backyard"
@@ -37,7 +37,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
             size="lg"
             className="h-12 rounded-lg bg-amber-600 px-8 text-base font-semibold text-white hover:bg-amber-700 sm:h-14 sm:px-10 sm:text-lg"
           >
-            Get a Quote
+            GET 7K OFFER
           </Button>
 
         </div>
