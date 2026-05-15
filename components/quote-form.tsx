@@ -3,8 +3,59 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { CheckCircle2, ChevronRight, Send, User, Mail, Phone, Sparkles } from "lucide-react"
+import { CheckCircle2, ChevronRight, Send, User, Mail, Phone, Sparkles, AlertCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
+
+// Validation helpers
+const isValidEmail = (email: string): boolean => {
+  // Check for proper email format with common domain extensions
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  if (!emailRegex.test(email)) return false
+  
+  // Block obviously fake emails
+  const fakeDomains = ["test.com", "fake.com", "example.com", "asdf.com", "qwerty.com", "abc.com", "123.com"]
+  const domain = email.split("@")[1]?.toLowerCase()
+  if (fakeDomains.includes(domain)) return false
+  
+  // Block emails that are just repeated characters
+  const localPart = email.split("@")[0]
+  if (/^(.)\1+$/.test(localPart)) return false
+  
+  return true
+}
+
+const isValidPhone = (phone: string): boolean => {
+  // Remove all non-digit characters
+  const digits = phone.replace(/\D/g, "")
+  
+  // Must have 10 digits (US phone) or 11 digits starting with 1
+  if (digits.length === 10) return true
+  if (digits.length === 11 && digits.startsWith("1")) return true
+  
+  // Block obviously fake numbers (all same digit, sequential)
+  if (/^(\d)\1+$/.test(digits)) return false
+  if (digits === "1234567890" || digits === "0987654321") return false
+  
+  return false
+}
+
+const getValidationError = (field: string, value: string): string | null => {
+  if (!value.trim()) return null
+  
+  if (field === "email") {
+    if (!isValidEmail(value)) {
+      return "Please enter a valid email address"
+    }
+  }
+  
+  if (field === "phone") {
+    if (!isValidPhone(value)) {
+      return "Please enter a valid 10-digit phone number"
+    }
+  }
+  
+  return null
+}
 
 const STEPS = [
   {
@@ -41,36 +92,64 @@ export function QuoteForm() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState("")
+  const [fieldError, setFieldError] = useState<string | null>(null)
   const [animate, setAnimate] = useState(false)
   const totalSteps = STEPS.length
   const currentStep = STEPS[step]
 
   useEffect(() => {
     setAnimate(true)
+    setFieldError(null)
     const timer = setTimeout(() => setAnimate(false), 300)
     return () => clearTimeout(timer)
   }, [step])
 
+  // Validate current field
+  const currentValue = currentStep.field ? textInputs[currentStep.field] || "" : ""
+  const validationError = currentStep.field ? getValidationError(currentStep.field, currentValue) : null
+  
   const canGoNext = currentStep.field
-    ? !!textInputs[currentStep.field]?.trim()
+    ? !!currentValue.trim() && !validationError
     : false
 
   const handleNext = () => {
+    const error = currentStep.field ? getValidationError(currentStep.field, currentValue) : null
+    if (error) {
+      setFieldError(error)
+      return
+    }
+    setFieldError(null)
     if (step < totalSteps - 1) setStep(step + 1)
   }
 
   const handlePrev = () => {
+    setFieldError(null)
     if (step > 0) setStep(step - 1)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && canGoNext) {
+    if (e.key === "Enter" && currentValue.trim()) {
+      const error = currentStep.field ? getValidationError(currentStep.field, currentValue) : null
+      if (error) {
+        setFieldError(error)
+        return
+      }
       if (step < totalSteps - 1) {
         handleNext()
       } else {
         handleSubmit()
       }
     }
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value
+    setTextInputs((prev) => ({
+      ...prev,
+      [currentStep.field!]: newValue,
+    }))
+    // Clear field error when user starts typing again
+    if (fieldError) setFieldError(null)
   }
 
   const handleSubmit = async () => {
@@ -186,16 +265,22 @@ export function QuoteForm() {
                   type={currentStep.field === "email" ? "email" : currentStep.field === "phone" ? "tel" : "text"}
                   placeholder={currentStep.placeholder}
                   value={textInputs[currentStep.field] || ""}
-                  onChange={(e) =>
-                    setTextInputs((prev) => ({
-                      ...prev,
-                      [currentStep.field!]: e.target.value,
-                    }))
-                  }
+                  onChange={handleInputChange}
                   onKeyDown={handleKeyDown}
                   autoFocus
-                  className="h-16 rounded-xl border-2 border-white/10 bg-white/5 text-center text-xl text-white placeholder:text-white/30 focus-visible:border-amber-500 focus-visible:ring-0 focus-visible:ring-offset-0 transition-all duration-200"
+                  className={cn(
+                    "h-16 rounded-xl border-2 bg-white/5 text-center text-xl text-white placeholder:text-white/30 focus-visible:ring-0 focus-visible:ring-offset-0 transition-all duration-200",
+                    fieldError 
+                      ? "border-red-500 focus-visible:border-red-500" 
+                      : "border-white/10 focus-visible:border-amber-500"
+                  )}
                 />
+                {fieldError && (
+                  <div className="mt-3 flex items-center justify-center gap-2 text-sm text-red-400">
+                    <AlertCircle className="size-4" />
+                    {fieldError}
+                  </div>
+                )}
               </div>
             )}
           </div>
