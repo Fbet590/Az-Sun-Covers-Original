@@ -3,12 +3,12 @@
 import { useRef, useCallback } from "react"
 import { HeroSection } from "@/components/hero-section"
 import { QuoteForm } from "@/components/quote-form"
-import { TrustBadges } from "@/components/trust-badges"
+
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ServicesSection } from "@/components/services-section"
 import { GallerySection } from "@/components/gallery-section"
 import { FaqSection } from "@/components/faq-section"
-import { PricingGrid } from "@/components/pricing-grid"
+
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -21,11 +21,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection onGetQuote={scrollToForm} />
-      <div ref={formRef}>
+      <div ref={formRef} className="-mt-20 relative z-10 md:mt-0">
         <QuoteForm />
       </div>
-      <TrustBadges onGetQuote={scrollToForm} />
-      <PricingGrid onGetQuote={scrollToForm} />
       <TestimonialsSection />
       <ServicesSection />
       <GallerySection />
