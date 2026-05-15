@@ -196,9 +196,6 @@ export function QuoteForm() {
                   autoFocus
                   className="h-16 rounded-xl border-2 border-white/10 bg-white/5 text-center text-xl text-white placeholder:text-white/30 focus-visible:border-amber-500 focus-visible:ring-0 focus-visible:ring-offset-0 transition-all duration-200"
                 />
-                <p className="mt-3 text-center text-sm text-white/40">
-                  Press <kbd className="rounded bg-white/10 px-2 py-0.5 font-mono text-amber-400">Enter</kbd> to continue
-                </p>
               </div>
             )}
           </div>
