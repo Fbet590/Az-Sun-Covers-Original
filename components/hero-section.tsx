@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col overflow-hidden pb-16 sm:pb-0">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col overflow-hidden pb-24 sm:pb-8">
       <Image
         src="/images/hero-patio.jpg"
         alt="Custom patio cover in Arizona backyard"
@@ -27,7 +27,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-6 sm:px-6 sm:py-0 lg:px-8">
         <div className="max-w-2xl">
           <h1 className="mb-3 sm:mb-5 text-[2.55rem] font-bold leading-tight text-white sm:text-[3.2rem] lg:text-[3.825rem] text-balance" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            Transform Your Outdoors with Custom Patio Covers Designed to Impress
+            Transform Your Outdoor Space.{"\n\n"}Get our 7K Flat Offer.{"\n\n"}Custom Patio Covers Designed to Impress.
           </h1>
           <p className="mb-5 sm:mb-8 text-lg leading-relaxed text-white/80 sm:text-xl lg:text-2xl">
             Handcrafted Patio Covers That Turn Ordinary Backyards Into Luxury Retreats
@@ -37,7 +37,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
             size="lg"
             className="h-12 rounded-lg bg-amber-600 px-8 text-base font-semibold text-white hover:bg-amber-700 sm:h-14 sm:px-10 sm:text-lg"
           >
-            Get a Quote
+            GET 7K OFFER
           </Button>
 
         </div>
