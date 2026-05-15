@@ -37,7 +37,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
             size="lg"
             className="h-12 rounded-lg bg-amber-600 px-8 text-base font-semibold text-white hover:bg-amber-700 sm:h-14 sm:px-10 sm:text-lg"
           >
-            GET 7K OFFER
+            GET OUR 7K OFFER
           </Button>
 
         </div>
