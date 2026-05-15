@@ -5,45 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Progress } from "@/components/ui/progress"
 import { CheckCircle2, ChevronLeft, ChevronRight, Send } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 const STEPS = [
-  {
-    title: "What kind of structure are you looking for?",
-    type: "select" as const,
-    options: [
-      { label: "Solid Top", icon: "solid" },
-      { label: "Lattice (Let some light in)", icon: "lattice" },
-      { label: "Louvered (Opens and closes)", icon: "louvered" },
-    ],
-  },
-  {
-    title: "What's your approximate budget for this project?",
-    type: "select" as const,
-    options: [
-      { label: "Under $9,000", icon: "budget" },
-      { label: "$10,000 – $15,000", icon: "budget" },
-      { label: "$15,000 – $25,000", icon: "budget" },
-      { label: "$25,000 + (Custom)", icon: "budget" },
-    ],
-  },
-  {
-    title: "Where will the structure go?",
-    type: "select" as const,
-    options: [
-      { label: "Attached to house", icon: "attached" },
-      { label: "Free Standing", icon: "free" },
-    ],
-  },
-  {
-    title: "Are you flexible with your budget to guarantee premium-quality materials and workmanship?",
-    type: "select" as const,
-    options: [
-      { label: "Yes, I prefer premium quality even if the cost increases slightly", icon: "yes" },
-      { label: "Maybe, depends on the options presented", icon: "maybe" },
-      { label: "No, I have a fixed budget", icon: "no" },
-    ],
-  },
   {
     title: "Enter your name:",
     type: "text" as const,
@@ -68,7 +31,6 @@ const playfairStyle = { fontFamily: "var(--font-playfair), Playfair Display, ser
 
 export function QuoteForm() {
   const [step, setStep] = useState(0)
-  const [answers, setAnswers] = useState<Record<number, string>>({})
   const [textInputs, setTextInputs] = useState<Record<string, string>>({})
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -77,15 +39,9 @@ export function QuoteForm() {
   const progress = ((step + 1) / totalSteps) * 100
   const currentStep = STEPS[step]
 
-  const canGoNext = currentStep.type === "select"
-    ? !!answers[step]
-    : currentStep.field
-      ? !!textInputs[currentStep.field]?.trim()
-      : false
-
-  const handleSelect = (value: string) => {
-    setAnswers((prev) => ({ ...prev, [step]: value }))
-  }
+  const canGoNext = currentStep.field
+    ? !!textInputs[currentStep.field]?.trim()
+    : false
 
   const handleNext = () => {
     if (step < totalSteps - 1) setStep(step + 1)
@@ -100,10 +56,6 @@ export function QuoteForm() {
     setError("")
     try {
       const payload = {
-        structure: answers[0] || "",
-        budget: answers[1] || "",
-        placement: answers[2] || "",
-        budgetFlexibility: answers[3] || "",
         name: textInputs.name || "",
         email: textInputs.email || "",
         phone: textInputs.phone || "",
@@ -118,10 +70,7 @@ export function QuoteForm() {
         throw new Error(data.error || "Something went wrong")
       }
       if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-        (window as any).fbq("track", "Lead", {
-          content_name: payload.structure,
-          value: payload.budget,
-        })
+        (window as any).fbq("track", "Lead")
       }
       setSubmitted(true)
     } catch (err) {
@@ -133,7 +82,7 @@ export function QuoteForm() {
 
   if (submitted) {
     return (
-      <section id="quote-form" className="bg-[#1a1207] py-20">
+      <section id="quote-form" className="bg-[#1a1207] pt-10 pb-20 md:py-20">
         <div className="mx-auto max-w-2xl px-4 text-center">
           <div className="rounded-2xl border border-amber-600/20 bg-[#261c0d] p-12 shadow-2xl">
             <CheckCircle2 className="mx-auto mb-6 size-16 text-amber-500" />
@@ -150,16 +99,16 @@ export function QuoteForm() {
   }
 
   return (
-    <section id="quote-form" className="bg-[#1a1207] py-20">
+    <section id="quote-form" className="bg-[#1a1207] pt-10 pb-20 md:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
         <div className="mb-10 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-amber-400">
             AZ Sun Covers LLC
           </p>
           <h2 className="text-2xl font-bold text-white sm:text-3xl text-balance" style={playfairStyle}>
-            {"CHECK OFF THE OPTION YOU'RE LOOKING FOR BELOW"}
+            GET YOUR FREE QUOTE TODAY
           </h2>
-          <p className="mt-2 text-amber-400/80">{"And We'll Do The Rest!"}</p>
+          <p className="mt-2 text-amber-400/80">{"We'll Get Back To You Shortly!"}</p>
         </div>
 
         <div className="rounded-2xl border border-amber-600/20 bg-[#261c0d] p-6 shadow-2xl sm:p-10">
@@ -175,26 +124,7 @@ export function QuoteForm() {
             {currentStep.title}
           </h3>
 
-          {currentStep.type === "select" && currentStep.options && (
-            <div className="flex flex-col gap-3">
-              {currentStep.options.map((option) => (
-                <button
-                  key={option.label}
-                  onClick={() => handleSelect(option.label)}
-                  className={cn(
-                    "w-full rounded-xl border-2 px-5 py-4 text-left text-sm font-medium transition-all sm:text-base",
-                    answers[step] === option.label
-                      ? "border-amber-500 bg-amber-500/15 text-amber-300"
-                      : "border-white/10 bg-white/5 text-white/80 hover:border-white/30 hover:bg-white/10"
-                  )}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {currentStep.type === "text" && currentStep.field && (
+          {currentStep.field && (
             <div className="mx-auto max-w-md">
               <Input
                 type={currentStep.field === "email" ? "email" : currentStep.field === "phone" ? "tel" : "text"}
