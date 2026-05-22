@@ -19,7 +19,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
       {/* Top-left logo text */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
         <p className="text-base font-bold uppercase tracking-widest text-white sm:text-lg">
-          AZ Sun Covers LLC
+          ESSENTIAL PACKAGE
         </p>
       </div>
 
@@ -27,7 +27,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-6 sm:px-6 sm:py-0 lg:px-8 -mt-4 sm:-mt-8">
         <div className="max-w-2xl">
           <h1 className="mb-3 sm:mb-5 text-[60px] font-bold leading-tight text-white sm:text-[80px]" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            Grab Our 7k Flat Offer.
+            Grab Our 8.5k Flat Offer.
           </h1>
           <p className="mb-5 sm:mb-8 text-[33px] sm:text-[38px] lg:text-[42px] font-bold leading-tight text-white/90" style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
             Custom Patio Covers <span className="underline decoration-amber-500 underline-offset-4">Designed</span> to Impress.
@@ -40,7 +40,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
             size="lg"
             className="h-12 rounded-lg bg-amber-600 px-8 text-base font-semibold text-white hover:bg-amber-700 sm:h-14 sm:px-10 sm:text-lg"
           >
-            GET OUR 7K OFFER
+            GET OUR 8.5K OFFER
           </Button>
 
         </div>
