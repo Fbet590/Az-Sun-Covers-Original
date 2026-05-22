@@ -19,7 +19,7 @@ export function HeroSection({ onGetQuote }: { onGetQuote: () => void }) {
       {/* Top-left logo text */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
         <p className="text-base font-bold uppercase tracking-widest text-white sm:text-lg">
-          AZ Sun Covers LLC
+          ESSENTIAL PACKAGE
         </p>
       </div>
 
