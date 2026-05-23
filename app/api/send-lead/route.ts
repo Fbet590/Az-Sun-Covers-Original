@@ -1,47 +1,32 @@
 import { NextResponse } from "next/server"
 
 const WEBHOOK_URL =
-  "https://services.leadconnectorhq.com/hooks/0VbUGbZaW3xKX3mcDC4p/webhook-trigger/zgKJ6QzxfT7hM4zqnr7Z"
+  "https://services.leadconnectorhq.com/hooks/0VbUGbZaW3xKX3mcDC4p/webhook-trigger/65853a6e-d44a-4824-bb97-990e14ee15cb"
 
 export async function POST(request: Request) {
   try {
     const body = await request.json()
 
-    const {
-      structure,
-      budget,
-      placement,
-      budgetFlexibility,
-      name,
-      email,
-      phone,
-    } = body
+    const { name, email, phone } = body
 
-    const webhookPayload = {
+    const payload = {
       contact: {
         name,
         email,
         phone,
       },
-      structure,
-      budget,
-      placement,
-      budget_flexibility: budgetFlexibility,
-      source: "AZ Sun Covers Landing Page",
+      source: "AZ Sun Covers Landing Page - Essential Package",
       submitted_at: new Date().toISOString(),
     }
 
-    const webhookRes = await fetch(WEBHOOK_URL, {
+    const webhookResponse = await fetch(WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(webhookPayload),
+      body: JSON.stringify(payload),
     })
 
-    if (!webhookRes.ok) {
-      return NextResponse.json(
-        { error: "Failed to submit your request. Please try again." },
-        { status: 502 }
-      )
+    if (!webhookResponse.ok) {
+      throw new Error("Webhook delivery failed")
     }
 
     return NextResponse.json({ success: true })
