@@ -6,15 +6,15 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 const TESTIMONIALS = [
   {
     name: "Pat Tudisco",
-    text: "AZ Sun Covers built a pergola in my back yard today. I cannot begin to say how very pleased we are with Manny, his crew and the company itself. PROFESSIONAL in what they do and are men of their word. Our Pergola looks fantastic.",
+    text: "Better Life Landscape built a pergola in my back yard today. I cannot begin to say how very pleased we are with Jamal, his crew and the company itself. PROFESSIONAL in what they do and are men of their word. Our Pergola looks fantastic.",
   },
   {
     name: "David Buettner",
-    text: "Manny and team did a great job repairing my complicated roof cover after a major wind storm. They were able to duplicate the curved design and worked with me to make sure that I was happy.",
+    text: "Jamal and team did a great job repairing my complicated roof cover after a major wind storm. They were able to duplicate the curved design and worked with me to make sure that I was happy.",
   },
   {
     name: "Ruben Pulido",
-    text: "AZ Sun Covers built us a beautiful pergola with excellent craftsmanship and great service. Professional, on time, and easy to work with\u2014highly recommend!",
+    text: "Better Life Landscape built us a beautiful pergola with excellent craftsmanship and great service. Professional, on time, and easy to work with\u2014highly recommend!",
   },
   {
     name: "Connor",
@@ -22,11 +22,11 @@ const TESTIMONIALS = [
   },
   {
     name: "Nick Ortega",
-    text: "I own Heat Wave Outdoor Scapes and Manny and his boys have been doing pergolas and patio extensions for the last couple years. Great customer service, great communication and great work!",
+    text: "I own Heat Wave Outdoor Scapes and Jamal and his boys have been doing pergolas and patio extensions for the last couple years. Great customer service, great communication and great work!",
   },
   {
     name: "Riley Jade",
-    text: "Manny is great! I'm a landscaping contractor and he does my pergolas for me! His quality is incredible! He is fast responsive and does great work for a very reasonable price!",
+    text: "Jamal is great! I'm a landscaping contractor and he does my pergolas for me! His quality is incredible! He is fast responsive and does great work for a very reasonable price!",
   },
 ]
 
