@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 
 const WEBHOOK_URL =
-  "https://services.leadconnectorhq.com/hooks/0VbUGbZaW3xKX3mcDC4p/webhook-trigger/8ff03f17-5f01-4fe8-b02f-68b004bfccfd"
+  "https://services.leadconnectorhq.com/hooks/rDrIW6TO5WawA7pvJ58H/webhook-trigger/e17e4a97-66d6-48cb-ae0c-115b84291046"
 
 export async function POST(request: Request) {
   try {
