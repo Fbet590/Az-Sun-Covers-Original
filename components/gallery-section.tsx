@@ -15,22 +15,6 @@ const PROJECTS = [
   { src: "/images/gallery-8.jpg", alt: "Brown lattice sun cover viewed from underneath" },
   { src: "/images/gallery-9.jpg", alt: "Dark lattice sun cover with shadow patterns on turf" },
   { src: "/images/gallery-10.jpg", alt: "Dark gray freestanding lattice pergola on pavers" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_b94rkeb94rkeb94r.png-Zcka3T16GI0MfBqDoyJoh71KIJCVJM.jpeg", alt: "Solid-roof patio cover with ceiling fans and outdoor dining" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_9lju049lju049lju.png-iYjVTTF4OyBN0ZlnnqPHNlzmRvqSdm.jpeg", alt: "Modern louvered pergola over outdoor bar area" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_g1sgstg1sgstg1sg.png-fTN2Pe2Tr9gry5nJAdMvC68dDr8urv.jpeg", alt: "Dark freestanding pergola on green turf with stepping stones" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_6dxzay6dxzay6dxz.png-O12q2IiI23NE5wQ12jbFSA4Rlyr1Aq.jpeg", alt: "Solid-roof attached patio cover with dual ceiling fans" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_jj27vyjj27vyjj27.png-ajDW7tWgHf3nOih5KAs8jbpocCymaJ.jpeg", alt: "White lattice pergola with mountain views" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_44ltur44ltur44lt.png-4fG4ARgBdl2T9da5ufGehOGPNJnIDG.jpeg", alt: "Dark louvered pergola by pool with privacy slats" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_i58c1ui58c1ui58c.png-riLe0fIW2aBQhsPzlfNkwHHNYu80pt.jpeg", alt: "Solid-roof pergola over outdoor kitchen with grill" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_1zi2sq1zi2sq1zi2.png-1pLeNJNOiZfc0uLv4Nsu9FyBtZho6g.jpeg", alt: "Luxury pool pergola with waterfall feature at dusk" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_5y6ya25y6ya25y6y.png-MpjvCer6VHRPBGWwkBeLE3QzjW5ty2.jpeg", alt: "Evening pergola with string lights in Mesa AZ" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_4aq3o24aq3o24aq3.png-w1y89GRQ73EWPdu66avlaRhnqDawUa.jpeg", alt: "Freestanding solid-roof pergola on paver patio" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_s3187gs3187gs318.png-H7wygoMjPVYyiMplzxMusvp7zlJD9G.jpeg", alt: "Dark louvered pergola with privacy wall by pool" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_6sb5ia6sb5ia6sb5.png-C8Bd4arsldd0g0jfgPZIvGUriDZe4s.jpeg", alt: "Modern pergola with horizontal slat walls on turf" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_s8h5lus8h5lus8h5.png-FNTURxspApBF2KbzrCgK1EubPeh5qO.jpeg", alt: "Solid-roof pergola over outdoor kitchen by spa" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_ga9atiga9atiga9a.png-ojFVDM2ljL46RaydNwF9ormLf9DxXf.jpeg", alt: "Freestanding dark pergola on paver patio with turf" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_n99aq3n99aq3n99a.png-mDMlrSHuJ7ppwAPJPD5HLCawAFiLsv.jpeg", alt: "Solid-roof pergola with outdoor kitchen and desert landscaping" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_w268uiw268uiw268.png-MsHAYKrD1uTprgFVh3J68dvDG8hNiT.jpeg", alt: "Bronze pergola with ceiling fan over stone outdoor kitchen" },
 ]
 
 const poppinsStyle = { fontFamily: "var(--font-poppins), Poppins, sans-serif" }
