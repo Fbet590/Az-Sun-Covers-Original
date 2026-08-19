@@ -15,6 +15,15 @@ const PROJECTS = [
   { src: "/images/gallery-8.jpg", alt: "Brown lattice sun cover viewed from underneath" },
   { src: "/images/gallery-9.jpg", alt: "Dark lattice sun cover with shadow patterns on turf" },
   { src: "/images/gallery-10.jpg", alt: "Dark gray freestanding lattice pergola on pavers" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/605985192_18094584977494359_7429041825270019903_n-5uUmeNWnHIgV2tOjxBlakSNJKfF5WY.jpg", alt: "Dark louvered pergola over paver walkway with landscape lighting" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/605904172_18094585016494359_2863394204829172646_n-thqi9DuuRLmnIjpZFrwoHS2tlo17y7.jpg", alt: "Freestanding dark solid-roof pergola beside artificial turf yard" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/607221145_18094584959494359_1782656086283699737_n%28792%29-xCxG6sdXWazqdibjfnODk3r42ofOhg.jpg", alt: "Dark louvered pergola on paver patio with desert landscaping at dusk" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/604827609_18094585025494359_2108981316619141228_n-VQJ60mivlz2dgKSVbtmaYy5NltuNjX.jpg", alt: "Attached dark louvered patio cover with view of home and turf yard" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/620411470_18097240007494359_4464836072478560666_n%28997%29-oS9QI1uBNKAHi8HA7isH4tz4YsOt78.jpg", alt: "White louvered patio cover with paver walkway across green turf" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/620451229_18097240052494359_9104924487855446228_n-ROoOCh8Lo2BdFSGSqeGAsv1elDwoHz.jpg", alt: "White solid-roof patio cover over paver patio with turf yard" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/608228298_18094584974494359_6638459488127035030_n-CfPMCuY0iszcEqxMINcfQ5pq9feZoP.jpg", alt: "Dark freestanding pergola beside curved paver pathway and turf" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/620409373_18097240079494359_5513927486353361083_n-ENB9W3zQVitvd6pBIeDelpNfcDY6NE.jpg", alt: "White solid-roof patio cover attached to home with turf yard" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/605904169_18094585007494359_5876347638347139777_n-T9b0XHpxXvgVK0WWdy6GU1JIb14C9I.jpg", alt: "Aerial view of dark louvered pergola on concrete patio with paver walkway" },
 ]
 
 const poppinsStyle = { fontFamily: "var(--font-poppins), Poppins, sans-serif" }
